@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         media = new MediaPlayer();
@@ -63,6 +65,24 @@ public class MainActivity extends AppCompatActivity {
             Glide.with(getApplicationContext()).load(R.drawable.green).into(butoes.get(i));
         }
 
+        if (savedInstanceState != null) {
+            index = savedInstanceState.getInt("INDEX");
+            position = savedInstanceState.getInt("POSITION");
+            if (position > 0) {
+                media = MediaPlayer.create(getApplicationContext(), Uri.parse("android.resource://" + getPackageName() + "/" + ids[index]));
+                media.seekTo(position);
+                Glide.with(getApplicationContext()).load(R.drawable.red).into(butoes.get(index));
+                media.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        Glide.with(getApplicationContext()).load(R.drawable.green).into(butoes.get(index));
+                    }
+                });
+                media.start();
+            }
+        }
+
+
         for (final ImageButton btn: butoes){
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -84,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                         });
                         media.start();
                     } catch (Exception e){
-
+                        //faz nada
                     }
                 }
             });
@@ -127,5 +147,12 @@ public class MainActivity extends AppCompatActivity {
             });
             media.start();
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putInt("INDEX", index);
+        savedInstanceState.putInt("POSITION", media.getCurrentPosition());
+        super.onSaveInstanceState(savedInstanceState);
     }
 }
