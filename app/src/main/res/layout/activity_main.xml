@@ -258,6 +258,26 @@
                 app:layout_constraintTop_toBottomOf="@+id/btn21"
                 android:background="@android:color/transparent" />
 
+            <ImageButton
+                android:id="@+id/btn26"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn24" />
+
+            <ImageButton
+                android:id="@+id/btn25"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn23" />
+
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="150dp"
@@ -593,6 +613,36 @@
                 android:textSize="30sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btn21" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="26"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn24" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="25"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="30sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn23" />
+
+
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
