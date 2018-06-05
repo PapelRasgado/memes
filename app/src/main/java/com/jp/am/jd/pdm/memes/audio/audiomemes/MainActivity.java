@@ -1,13 +1,11 @@
 package com.jp.am.jd.pdm.memes.audio.audiomemes;
 
-import android.annotation.SuppressLint;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -18,13 +16,12 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<ImageButton> butoes;
     private int[] ids = {R.raw.acertou, R.raw.aipaipara, R.raw.bambam_birl, R.raw.borracha, R.raw.foiotimo_foiotimo, R.raw.imggeral_aimeucu, R.raw.imggeral_correberg,
             R.raw.imggeral_funkingles, R.raw.papaco_aindabem, R.raw.picapau_fuitapeado, R.raw.imggeral_pauquebrando, R.raw.kidbengala_taarrombado, R.raw.kidbengala_temato, R.raw.sanguedejesus, R.raw.taldomula, R.raw.tiro,
-            R.raw.velhoaiai, R.raw.banbanfdpsai, R.raw.emorreu, R.raw.morrediabo, R.raw.ndaaver, R.raw.seubct, R.raw.soufoda, R.raw.trollei, R.raw.fodase, R.raw.boiola};
+            R.raw.velhoaiai, R.raw.banbanfdpsai, R.raw.emorreu, R.raw.morrediabo, R.raw.ndaaver, R.raw.seubct, R.raw.soufoda, R.raw.trollei};
     private MediaPlayer media;
     private int index;
     private int position;
 
 
-    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,8 +56,6 @@ public class MainActivity extends AppCompatActivity {
         butoes.add((ImageButton) findViewById(R.id.btn22));
         butoes.add((ImageButton) findViewById(R.id.btn23));
         butoes.add((ImageButton) findViewById(R.id.btn24));
-        butoes.add((ImageButton) findViewById(R.id.btn25));
-        butoes.add((ImageButton) findViewById(R.id.btn26));
 
 
         for (int i = 0; i < butoes.size(); i++) {
